@@ -1,0 +1,1331 @@
+[
+  {
+    "display": "Abaddon",
+    "internal": "abaddon",
+    "aliases": [
+      "Abaddon",
+      "abaddon"
+    ],
+    "site_slug": "abaddon",
+    "hero_id": 102
+  },
+  {
+    "display": "Alchemist",
+    "internal": "alchemist",
+    "aliases": [
+      "Razzil",
+      "alchemist"
+    ],
+    "site_slug": "alchemist",
+    "hero_id": 73
+  },
+  {
+    "display": "Ancient Apparition",
+    "internal": "ancient_apparition",
+    "aliases": [
+      "aa",
+      "ancient_apparition"
+    ],
+    "site_slug": "ancient_apparition",
+    "hero_id": 68
+  },
+  {
+    "display": "Anti-Mage",
+    "internal": "antimage",
+    "aliases": [
+      "am",
+      "antimage",
+      "wei"
+    ],
+    "site_slug": "antimage",
+    "hero_id": 1
+  },
+  {
+    "display": "Arc Warden",
+    "internal": "arc_warden",
+    "aliases": [
+      "arc_warden",
+      "aw",
+      "zet"
+    ],
+    "site_slug": "arc_warden",
+    "hero_id": 113
+  },
+  {
+    "display": "Axe",
+    "internal": "axe",
+    "aliases": [
+      "axe"
+    ],
+    "site_slug": "axe",
+    "hero_id": 2
+  },
+  {
+    "display": "Bane",
+    "internal": "bane",
+    "aliases": [
+      "bane"
+    ],
+    "site_slug": "bane",
+    "hero_id": 3
+  },
+  {
+    "display": "Batrider",
+    "internal": "batrider",
+    "aliases": [
+      "batrider",
+      "br"
+    ],
+    "site_slug": "batrider",
+    "hero_id": 65
+  },
+  {
+    "display": "Beastmaster",
+    "internal": "beastmaster",
+    "aliases": [
+      "beastmaster",
+      "bm"
+    ],
+    "site_slug": "beastmaster",
+    "hero_id": 38
+  },
+  {
+    "display": "Bloodseeker",
+    "internal": "bloodseeker",
+    "aliases": [
+      "bloodseeker",
+      "bs"
+    ],
+    "site_slug": "bloodseeker",
+    "hero_id": 4
+  },
+  {
+    "display": "Bounty Hunter",
+    "internal": "bounty_hunter",
+    "aliases": [
+      "bh",
+      "bounty_hunter"
+    ],
+    "site_slug": "bounty_hunter",
+    "hero_id": 62
+  },
+  {
+    "display": "Brewmaster",
+    "internal": "brewmaster",
+    "aliases": [
+      "Mangix",
+      "bm",
+      "brewmaster"
+    ],
+    "site_slug": "brewmaster",
+    "hero_id": 78
+  },
+  {
+    "display": "Bristleback",
+    "internal": "bristleback",
+    "aliases": [
+      "Rigwarl",
+      "bb",
+      "bristleback"
+    ],
+    "site_slug": "bristleback",
+    "hero_id": 99
+  },
+  {
+    "display": "Broodmother",
+    "internal": "broodmother",
+    "aliases": [
+      "Arachnia",
+      "bm",
+      "broodmother",
+      "spider"
+    ],
+    "site_slug": "broodmother",
+    "hero_id": 61
+  },
+  {
+    "display": "Centaur Warrunner",
+    "internal": "centaur",
+    "aliases": [
+      "centaur"
+    ],
+    "site_slug": "centaur",
+    "hero_id": 96
+  },
+  {
+    "display": "Chaos Knight",
+    "internal": "chaos_knight",
+    "aliases": [
+      "chaos_knight",
+      "ck"
+    ],
+    "site_slug": "chaos_knight",
+    "hero_id": 81
+  },
+  {
+    "display": "Chen",
+    "internal": "chen",
+    "aliases": [
+      "Holy Knight",
+      "chen"
+    ],
+    "site_slug": "chen",
+    "hero_id": 66
+  },
+  {
+    "display": "Clinkz",
+    "internal": "clinkz",
+    "aliases": [
+      "clinkz"
+    ],
+    "site_slug": "clinkz",
+    "hero_id": 56
+  },
+  {
+    "display": "Clockwerk",
+    "internal": "rattletrap",
+    "aliases": [
+      "Rattletrap",
+      "cw",
+      "rattletrap"
+    ],
+    "site_slug": "rattletrap",
+    "hero_id": 51
+  },
+  {
+    "display": "Crystal Maiden",
+    "internal": "crystal_maiden",
+    "aliases": [
+      "cm",
+      "crystal_maiden",
+      "rylai",
+      "wolf"
+    ],
+    "site_slug": "crystal_maiden",
+    "hero_id": 5
+  },
+  {
+    "display": "Dark Seer",
+    "internal": "dark_seer",
+    "aliases": [
+      "Ishkafel",
+      "dark_seer",
+      "ds"
+    ],
+    "site_slug": "dark_seer",
+    "hero_id": 55
+  },
+  {
+    "display": "Dark Willow",
+    "internal": "dark_willow",
+    "aliases": [
+      "Mireska",
+      "dark_willow",
+      "dw"
+    ],
+    "site_slug": "dark_willow",
+    "hero_id": 119
+  },
+  {
+    "display": "Dawnbreaker",
+    "internal": "dawnbreaker",
+    "aliases": [
+      "Dawnbreaker",
+      "Valora",
+      "dawnbreaker"
+    ],
+    "site_slug": "dawnbreaker",
+    "hero_id": 135
+  },
+  {
+    "display": "Dazzle",
+    "internal": "dazzle",
+    "aliases": [
+      "dazzle"
+    ],
+    "site_slug": "dazzle",
+    "hero_id": 50
+  },
+  {
+    "display": "Death Prophet",
+    "internal": "death_prophet",
+    "aliases": [
+      "Krobelus",
+      "death_prophet",
+      "dp"
+    ],
+    "site_slug": "death_prophet",
+    "hero_id": 43
+  },
+  {
+    "display": "Disruptor",
+    "internal": "disruptor",
+    "aliases": [
+      "disruptor"
+    ],
+    "site_slug": "disruptor",
+    "hero_id": 87
+  },
+  {
+    "display": "Doom",
+    "internal": "doom_bringer",
+    "aliases": [
+      "db",
+      "doom_bringer"
+    ],
+    "site_slug": "doom_bringer",
+    "hero_id": 69
+  },
+  {
+    "display": "Dragon Knight",
+    "internal": "dragon_knight",
+    "aliases": [
+      "davion",
+      "dk",
+      "dragon's blood",
+      "dragon_knight"
+    ],
+    "site_slug": "dragon_knight",
+    "hero_id": 49
+  },
+  {
+    "display": "Drow Ranger",
+    "internal": "drow_ranger",
+    "aliases": [
+      "Traxex",
+      "drow_ranger"
+    ],
+    "site_slug": "drow_ranger",
+    "hero_id": 6
+  },
+  {
+    "display": "Earth Spirit",
+    "internal": "earth_spirit",
+    "aliases": [
+      "Earth",
+      "Kaolin",
+      "earth_spirit",
+      "es"
+    ],
+    "site_slug": "earth_spirit",
+    "hero_id": 107
+  },
+  {
+    "display": "Earthshaker",
+    "internal": "earthshaker",
+    "aliases": [
+      "Raigor",
+      "earthshaker",
+      "es"
+    ],
+    "site_slug": "earthshaker",
+    "hero_id": 7
+  },
+  {
+    "display": "Elder Titan",
+    "internal": "elder_titan",
+    "aliases": [
+      "Cairne",
+      "TC",
+      "elder_titan",
+      "et"
+    ],
+    "site_slug": "elder_titan",
+    "hero_id": 103
+  },
+  {
+    "display": "Ember Spirit",
+    "internal": "ember_spirit",
+    "aliases": [
+      "Ember",
+      "Xin",
+      "ember_spirit",
+      "es"
+    ],
+    "site_slug": "ember_spirit",
+    "hero_id": 106
+  },
+  {
+    "display": "Enchantress",
+    "internal": "enchantress",
+    "aliases": [
+      "Aiushtha",
+      "enchantress"
+    ],
+    "site_slug": "enchantress",
+    "hero_id": 58
+  },
+  {
+    "display": "Enigma",
+    "internal": "enigma",
+    "aliases": [
+      "enigma"
+    ],
+    "site_slug": "enigma",
+    "hero_id": 33
+  },
+  {
+    "display": "Faceless Void",
+    "internal": "faceless_void",
+    "aliases": [
+      "faceless_void",
+      "fv"
+    ],
+    "site_slug": "faceless_void",
+    "hero_id": 41
+  },
+  {
+    "display": "Grimstroke",
+    "internal": "grimstroke",
+    "aliases": [
+      "grimstroke",
+      "gs"
+    ],
+    "site_slug": "grimstroke",
+    "hero_id": 121
+  },
+  {
+    "display": "Gyrocopter",
+    "internal": "gyrocopter",
+    "aliases": [
+      "Aurel",
+      "gyrocopter"
+    ],
+    "site_slug": "gyrocopter",
+    "hero_id": 72
+  },
+  {
+    "display": "Hoodwink",
+    "internal": "hoodwink",
+    "aliases": [
+      "hoodwink",
+      "hw",
+      "squirrel"
+    ],
+    "site_slug": "hoodwink",
+    "hero_id": 123
+  },
+  {
+    "display": "Huskar",
+    "internal": "huskar",
+    "aliases": [
+      "huskar"
+    ],
+    "site_slug": "huskar",
+    "hero_id": 59
+  },
+  {
+    "display": "Invoker",
+    "internal": "invoker",
+    "aliases": [
+      "invoker",
+      "kid"
+    ],
+    "site_slug": "invoker",
+    "hero_id": 74
+  },
+  {
+    "display": "Io",
+    "internal": "wisp",
+    "aliases": [
+      "wisp"
+    ],
+    "site_slug": "wisp",
+    "hero_id": 91
+  },
+  {
+    "display": "Jakiro",
+    "internal": "jakiro",
+    "aliases": [
+      "jakiro",
+      "thd",
+      "twin headed dragon"
+    ],
+    "site_slug": "jakiro",
+    "hero_id": 64
+  },
+  {
+    "display": "Juggernaut",
+    "internal": "juggernaut",
+    "aliases": [
+      "Yurnero",
+      "juggernaut"
+    ],
+    "site_slug": "juggernaut",
+    "hero_id": 8
+  },
+  {
+    "display": "Keeper of the Light",
+    "internal": "keeper_of_the_light",
+    "aliases": [
+      "ezalor",
+      "keeper",
+      "keeper_of_the_light",
+      "kotl"
+    ],
+    "site_slug": "keeper_of_the_light",
+    "hero_id": 90
+  },
+  {
+    "display": "Kez",
+    "internal": "kez",
+    "aliases": [
+      "bird samurai",
+      "kestrel",
+      "kez"
+    ],
+    "site_slug": "kez",
+    "hero_id": 145
+  },
+  {
+    "display": "Kunkka",
+    "internal": "kunkka",
+    "aliases": [
+      "Admiral",
+      "kunkka"
+    ],
+    "site_slug": "kunkka",
+    "hero_id": 23
+  },
+  {
+    "display": "Largo",
+    "internal": "largo",
+    "aliases": [
+      "largo",
+      "newest hero"
+    ],
+    "site_slug": "largo",
+    "hero_id": 155
+  },
+  {
+    "display": "Legion Commander",
+    "internal": "legion_commander",
+    "aliases": [
+      "Legion",
+      "Tresdin",
+      "lc",
+      "legion_commander"
+    ],
+    "site_slug": "legion_commander",
+    "hero_id": 104
+  },
+  {
+    "display": "Leshrac",
+    "internal": "leshrac",
+    "aliases": [
+      "leshrac",
+      "ts"
+    ],
+    "site_slug": "leshrac",
+    "hero_id": 52
+  },
+  {
+    "display": "Lich",
+    "internal": "lich",
+    "aliases": [
+      "Ethreain",
+      "lich"
+    ],
+    "site_slug": "lich",
+    "hero_id": 31
+  },
+  {
+    "display": "Lifestealer",
+    "internal": "life_stealer",
+    "aliases": [
+      "Naix",
+      "life_stealer",
+      "ls"
+    ],
+    "site_slug": "life_stealer",
+    "hero_id": 54
+  },
+  {
+    "display": "Lina",
+    "internal": "lina",
+    "aliases": [
+      "lina",
+      "slayer"
+    ],
+    "site_slug": "lina",
+    "hero_id": 25
+  },
+  {
+    "display": "Lion",
+    "internal": "lion",
+    "aliases": [
+      "Demon Witch",
+      "lion"
+    ],
+    "site_slug": "lion",
+    "hero_id": 26
+  },
+  {
+    "display": "Lone Druid",
+    "internal": "lone_druid",
+    "aliases": [
+      "Sylla",
+      "bear",
+      "ld",
+      "lone_druid"
+    ],
+    "site_slug": "lone_druid",
+    "hero_id": 80
+  },
+  {
+    "display": "Luna",
+    "internal": "luna",
+    "aliases": [
+      "Moon Rider",
+      "luna"
+    ],
+    "site_slug": "luna",
+    "hero_id": 48
+  },
+  {
+    "display": "Lycan",
+    "internal": "lycan",
+    "aliases": [
+      "Banehallow",
+      "lycan",
+      "wolf"
+    ],
+    "site_slug": "lycan",
+    "hero_id": 77
+  },
+  {
+    "display": "Magnus",
+    "internal": "magnataur",
+    "aliases": [
+      "magnataur",
+      "magnus"
+    ],
+    "site_slug": "magnataur",
+    "hero_id": 97
+  },
+  {
+    "display": "Marci",
+    "internal": "marci",
+    "aliases": [
+      "marci"
+    ],
+    "site_slug": "marci",
+    "hero_id": 136
+  },
+  {
+    "display": "Mars",
+    "internal": "mars",
+    "aliases": [
+      "mars"
+    ],
+    "site_slug": "mars",
+    "hero_id": 129
+  },
+  {
+    "display": "Medusa",
+    "internal": "medusa",
+    "aliases": [
+      "gorgon",
+      "medusa"
+    ],
+    "site_slug": "medusa",
+    "hero_id": 94
+  },
+  {
+    "display": "Meepo",
+    "internal": "meepo",
+    "aliases": [
+      "geomancer",
+      "meepo",
+      "meepwn"
+    ],
+    "site_slug": "meepo",
+    "hero_id": 82
+  },
+  {
+    "display": "Mirana",
+    "internal": "mirana",
+    "aliases": [
+      "Moon",
+      "Princess",
+      "mirana",
+      "potm"
+    ],
+    "site_slug": "mirana",
+    "hero_id": 9
+  },
+  {
+    "display": "Monkey King",
+    "internal": "monkey_king",
+    "aliases": [
+      "Sun Wukong",
+      "mk",
+      "monkey_king"
+    ],
+    "site_slug": "monkey_king",
+    "hero_id": 114
+  },
+  {
+    "display": "Morphling",
+    "internal": "morphling",
+    "aliases": [
+      "morphling"
+    ],
+    "site_slug": "morphling",
+    "hero_id": 10
+  },
+  {
+    "display": "Muerta",
+    "internal": "muerta",
+    "aliases": [
+      "muerta"
+    ],
+    "site_slug": "muerta",
+    "hero_id": 138
+  },
+  {
+    "display": "Naga Siren",
+    "internal": "naga_siren",
+    "aliases": [
+      "Slithice",
+      "naga",
+      "naga_siren"
+    ],
+    "site_slug": "naga_siren",
+    "hero_id": 89
+  },
+  {
+    "display": "Nature's Prophet",
+    "internal": "furion",
+    "aliases": [
+      "furion",
+      "np"
+    ],
+    "site_slug": "furion",
+    "hero_id": 53
+  },
+  {
+    "display": "Necrophos",
+    "internal": "necrolyte",
+    "aliases": [
+      "Rotundjere",
+      "necrolyte"
+    ],
+    "site_slug": "necrolyte",
+    "hero_id": 36
+  },
+  {
+    "display": "Night Stalker",
+    "internal": "night_stalker",
+    "aliases": [
+      "Balanar",
+      "night_stalker",
+      "ns"
+    ],
+    "site_slug": "night_stalker",
+    "hero_id": 60
+  },
+  {
+    "display": "Nyx Assassin",
+    "internal": "nyx_assassin",
+    "aliases": [
+      "na",
+      "nyx_assassin"
+    ],
+    "site_slug": "nyx_assassin",
+    "hero_id": 88
+  },
+  {
+    "display": "Ogre Magi",
+    "internal": "ogre_magi",
+    "aliases": [
+      "ogre_magi",
+      "om"
+    ],
+    "site_slug": "ogre_magi",
+    "hero_id": 84
+  },
+  {
+    "display": "Omniknight",
+    "internal": "omniknight",
+    "aliases": [
+      "Purist Thunderwrath",
+      "omniknight"
+    ],
+    "site_slug": "omniknight",
+    "hero_id": 57
+  },
+  {
+    "display": "Oracle",
+    "internal": "oracle",
+    "aliases": [
+      "Nerif",
+      "ora",
+      "oracle"
+    ],
+    "site_slug": "oracle",
+    "hero_id": 111
+  },
+  {
+    "display": "Outworld Destroyer",
+    "internal": "obsidian_destroyer",
+    "aliases": [
+      "Harbinger",
+      "obsidian_destroyer",
+      "od"
+    ],
+    "site_slug": "obsidian_destroyer",
+    "hero_id": 76
+  },
+  {
+    "display": "Pangolier",
+    "internal": "pangolier",
+    "aliases": [
+      "ar",
+      "pangolier"
+    ],
+    "site_slug": "pangolier",
+    "hero_id": 120
+  },
+  {
+    "display": "Phantom Assassin",
+    "internal": "phantom_assassin",
+    "aliases": [
+      "mortred",
+      "pa",
+      "phantom_assassin"
+    ],
+    "site_slug": "phantom_assassin",
+    "hero_id": 44
+  },
+  {
+    "display": "Phantom Lancer",
+    "internal": "phantom_lancer",
+    "aliases": [
+      "Azwraith",
+      "phantom_lancer",
+      "pl"
+    ],
+    "site_slug": "phantom_lancer",
+    "hero_id": 12
+  },
+  {
+    "display": "Phoenix",
+    "internal": "phoenix",
+    "aliases": [
+      "ph",
+      "phoenix"
+    ],
+    "site_slug": "phoenix",
+    "hero_id": 110
+  },
+  {
+    "display": "Primal Beast",
+    "internal": "primal_beast",
+    "aliases": [
+      "pb",
+      "primal_beast"
+    ],
+    "site_slug": "primal_beast",
+    "hero_id": 137
+  },
+  {
+    "display": "Puck",
+    "internal": "puck",
+    "aliases": [
+      "Faerie Dragon",
+      "fd",
+      "puck"
+    ],
+    "site_slug": "puck",
+    "hero_id": 13
+  },
+  {
+    "display": "Pudge",
+    "internal": "pudge",
+    "aliases": [
+      "Toy Butcher",
+      "pudge"
+    ],
+    "site_slug": "pudge",
+    "hero_id": 14
+  },
+  {
+    "display": "Pugna",
+    "internal": "pugna",
+    "aliases": [
+      "pugna"
+    ],
+    "site_slug": "pugna",
+    "hero_id": 45
+  },
+  {
+    "display": "Queen of Pain",
+    "internal": "queenofpain",
+    "aliases": [
+      "Akasha",
+      "qop",
+      "queenofpain"
+    ],
+    "site_slug": "queenofpain",
+    "hero_id": 39
+  },
+  {
+    "display": "Razor",
+    "internal": "razor",
+    "aliases": [
+      "Lightning Revenant",
+      "razor"
+    ],
+    "site_slug": "razor",
+    "hero_id": 15
+  },
+  {
+    "display": "Riki",
+    "internal": "riki",
+    "aliases": [
+      "Stealth Assassin",
+      "riki",
+      "sa"
+    ],
+    "site_slug": "riki",
+    "hero_id": 32
+  },
+  {
+    "display": "Ringmaster",
+    "internal": "ringmaster",
+    "aliases": [
+      "cogliostro",
+      "marionetto",
+      "ringmaster",
+      "rm"
+    ],
+    "site_slug": "ringmaster",
+    "hero_id": 131
+  },
+  {
+    "display": "Rubick",
+    "internal": "rubick",
+    "aliases": [
+      "rubick"
+    ],
+    "site_slug": "rubick",
+    "hero_id": 86
+  },
+  {
+    "display": "Sand King",
+    "internal": "sand_king",
+    "aliases": [
+      "Crixalis",
+      "sand_king",
+      "sk"
+    ],
+    "site_slug": "sand_king",
+    "hero_id": 16
+  },
+  {
+    "display": "Shadow Demon",
+    "internal": "shadow_demon",
+    "aliases": [
+      "sd",
+      "shadow_demon"
+    ],
+    "site_slug": "shadow_demon",
+    "hero_id": 79
+  },
+  {
+    "display": "Shadow Fiend",
+    "internal": "nevermore",
+    "aliases": [
+      "nevermore",
+      "sf"
+    ],
+    "site_slug": "nevermore",
+    "hero_id": 11
+  },
+  {
+    "display": "Shadow Shaman",
+    "internal": "shadow_shaman",
+    "aliases": [
+      "Rhasta",
+      "shadow_shaman",
+      "ss"
+    ],
+    "site_slug": "shadow_shaman",
+    "hero_id": 27
+  },
+  {
+    "display": "Silencer",
+    "internal": "silencer",
+    "aliases": [
+      "Nortrom",
+      "silencer"
+    ],
+    "site_slug": "silencer",
+    "hero_id": 75
+  },
+  {
+    "display": "Skywrath Mage",
+    "internal": "skywrath_mage",
+    "aliases": [
+      "dragonus",
+      "skywrath_mage"
+    ],
+    "site_slug": "skywrath_mage",
+    "hero_id": 101
+  },
+  {
+    "display": "Slardar",
+    "internal": "slardar",
+    "aliases": [
+      "Slithereen Guard",
+      "slardar"
+    ],
+    "site_slug": "slardar",
+    "hero_id": 28
+  },
+  {
+    "display": "Slark",
+    "internal": "slark",
+    "aliases": [
+      "slark"
+    ],
+    "site_slug": "slark",
+    "hero_id": 93
+  },
+  {
+    "display": "Snapfire",
+    "internal": "snapfire",
+    "aliases": [
+      "mortimer",
+      "snap",
+      "snapfire"
+    ],
+    "site_slug": "snapfire",
+    "hero_id": 128
+  },
+  {
+    "display": "Sniper",
+    "internal": "sniper",
+    "aliases": [
+      "Kardel Sharpeye",
+      "sniper"
+    ],
+    "site_slug": "sniper",
+    "hero_id": 35
+  },
+  {
+    "display": "Spectre",
+    "internal": "spectre",
+    "aliases": [
+      "Mercurial",
+      "spectre"
+    ],
+    "site_slug": "spectre",
+    "hero_id": 67
+  },
+  {
+    "display": "Spirit Breaker",
+    "internal": "spirit_breaker",
+    "aliases": [
+      "Barathrum",
+      "sb",
+      "spirit_breaker"
+    ],
+    "site_slug": "spirit_breaker",
+    "hero_id": 71
+  },
+  {
+    "display": "Storm Spirit",
+    "internal": "storm_spirit",
+    "aliases": [
+      "raijin",
+      "ss",
+      "storm_spirit",
+      "thunderkeg"
+    ],
+    "site_slug": "storm_spirit",
+    "hero_id": 17
+  },
+  {
+    "display": "Sven",
+    "internal": "sven",
+    "aliases": [
+      "Rogue Knight",
+      "sven"
+    ],
+    "site_slug": "sven",
+    "hero_id": 18
+  },
+  {
+    "display": "Techies",
+    "internal": "techies",
+    "aliases": [
+      "Spleen",
+      "Spoon",
+      "Squee",
+      "techies"
+    ],
+    "site_slug": "techies",
+    "hero_id": 105
+  },
+  {
+    "display": "Templar Assassin",
+    "internal": "templar_assassin",
+    "aliases": [
+      "Lanaya",
+      "ta",
+      "templar_assassin"
+    ],
+    "site_slug": "templar_assassin",
+    "hero_id": 46
+  },
+  {
+    "display": "Terrorblade",
+    "internal": "terrorblade",
+    "aliases": [
+      "tb",
+      "terrorblade"
+    ],
+    "site_slug": "terrorblade",
+    "hero_id": 109
+  },
+  {
+    "display": "Tidehunter",
+    "internal": "tidehunter",
+    "aliases": [
+      "Leviathan",
+      "th",
+      "tidehunter"
+    ],
+    "site_slug": "tidehunter",
+    "hero_id": 29
+  },
+  {
+    "display": "Timbersaw",
+    "internal": "shredder",
+    "aliases": [
+      "Rizzrack",
+      "Shredder",
+      "Timbersaw",
+      "shredder"
+    ],
+    "site_slug": "shredder",
+    "hero_id": 98
+  },
+  {
+    "display": "Tinker",
+    "internal": "tinker",
+    "aliases": [
+      "Boush",
+      "tinker"
+    ],
+    "site_slug": "tinker",
+    "hero_id": 34
+  },
+  {
+    "display": "Tiny",
+    "internal": "tiny",
+    "aliases": [
+      "Stone Giant",
+      "tiny"
+    ],
+    "site_slug": "tiny",
+    "hero_id": 19
+  },
+  {
+    "display": "Treant Protector",
+    "internal": "treant",
+    "aliases": [
+      "treant"
+    ],
+    "site_slug": "treant",
+    "hero_id": 83
+  },
+  {
+    "display": "Troll Warlord",
+    "internal": "troll_warlord",
+    "aliases": [
+      "jahrakal",
+      "troll",
+      "troll_warlord"
+    ],
+    "site_slug": "troll_warlord",
+    "hero_id": 95
+  },
+  {
+    "display": "Tusk",
+    "internal": "tusk",
+    "aliases": [
+      "Tuskarr",
+      "tusk"
+    ],
+    "site_slug": "tusk",
+    "hero_id": 100
+  },
+  {
+    "display": "Underlord",
+    "internal": "abyssal_underlord",
+    "aliases": [
+      "Azgalor",
+      "PitLord",
+      "abyssal_underlord",
+      "ul"
+    ],
+    "site_slug": "abyssal_underlord",
+    "hero_id": 108
+  },
+  {
+    "display": "Undying",
+    "internal": "undying",
+    "aliases": [
+      "Dirge",
+      "undying"
+    ],
+    "site_slug": "undying",
+    "hero_id": 85
+  },
+  {
+    "display": "Ursa",
+    "internal": "ursa",
+    "aliases": [
+      "Ulfsaar",
+      "ursa"
+    ],
+    "site_slug": "ursa",
+    "hero_id": 70
+  },
+  {
+    "display": "Vengeful Spirit",
+    "internal": "vengefulspirit",
+    "aliases": [
+      "Shendelzare",
+      "vengefulspirit",
+      "vs"
+    ],
+    "site_slug": "vengefulspirit",
+    "hero_id": 20
+  },
+  {
+    "display": "Venomancer",
+    "internal": "venomancer",
+    "aliases": [
+      "Lesale",
+      "venomancer"
+    ],
+    "site_slug": "venomancer",
+    "hero_id": 40
+  },
+  {
+    "display": "Viper",
+    "internal": "viper",
+    "aliases": [
+      "Netherdrake",
+      "viper"
+    ],
+    "site_slug": "viper",
+    "hero_id": 47
+  },
+  {
+    "display": "Visage",
+    "internal": "visage",
+    "aliases": [
+      "Necrolic",
+      "visage"
+    ],
+    "site_slug": "visage",
+    "hero_id": 92
+  },
+  {
+    "display": "Void Spirit",
+    "internal": "void_spirit",
+    "aliases": [
+      "Inai",
+      "VS",
+      "Void",
+      "void_spirit"
+    ],
+    "site_slug": "void_spirit",
+    "hero_id": 126
+  },
+  {
+    "display": "Warlock",
+    "internal": "warlock",
+    "aliases": [
+      "Demnok Lannik",
+      "warlock",
+      "wl"
+    ],
+    "site_slug": "warlock",
+    "hero_id": 37
+  },
+  {
+    "display": "Weaver",
+    "internal": "weaver",
+    "aliases": [
+      "Skitskurr",
+      "nw",
+      "weaver"
+    ],
+    "site_slug": "weaver",
+    "hero_id": 63
+  },
+  {
+    "display": "Windranger",
+    "internal": "windrunner",
+    "aliases": [
+      "Lyralei",
+      "windrunner",
+      "wr"
+    ],
+    "site_slug": "windrunner",
+    "hero_id": 21
+  },
+  {
+    "display": "Winter Wyvern",
+    "internal": "winter_wyvern",
+    "aliases": [
+      "Auroth",
+      "winter_wyvern",
+      "ww"
+    ],
+    "site_slug": "winter_wyvern",
+    "hero_id": 112
+  },
+  {
+    "display": "Witch Doctor",
+    "internal": "witch_doctor",
+    "aliases": [
+      "Zharvakko",
+      "wd",
+      "witch_doctor"
+    ],
+    "site_slug": "witch_doctor",
+    "hero_id": 30
+  },
+  {
+    "display": "Wraith King",
+    "internal": "skeleton_king",
+    "aliases": [
+      "Ostarion",
+      "one true king",
+      "sk",
+      "skeleton",
+      "skeleton_king",
+      "snk",
+      "wk"
+    ],
+    "site_slug": "skeleton_king",
+    "hero_id": 42
+  },
+  {
+    "display": "Zeus",
+    "internal": "zuus",
+    "aliases": [
+      "Lord of Heaven",
+      "zuus"
+    ],
+    "site_slug": "zuus",
+    "hero_id": 22
+  }
+]

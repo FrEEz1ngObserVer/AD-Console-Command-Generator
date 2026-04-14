@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "official_count": 127,
+  "local_count": 127,
+  "icon_count": 127,
+  "expected_icon_count": 127,
+  "message": "Hero count check passed: local 127, official 127.\nIcon count check passed: stored 127, expected 127."
+}
