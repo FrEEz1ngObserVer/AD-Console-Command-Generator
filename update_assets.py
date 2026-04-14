@@ -1,5 +1,16 @@
 from __future__ import annotations
 
+"""Refresh local hero metadata and offline hero icons from Valve sources.
+
+This updater does the slow/networked work ahead of time so the GUI can start fast.
+Its main jobs are:
+- download Valve's official hero list JSON;
+- merge new heroes into hero_data.json;
+- maintain one canonical icon per hero plus an alias map;
+- download any missing icons into cache/icons/;
+- write update_status.json so the app can show health information.
+"""
+
 import json
 import re
 import urllib.error
@@ -12,11 +23,17 @@ DATA_PATH = PROJECT_ROOT / "hero_data.json"
 ICON_DIR = PROJECT_ROOT / "cache" / "icons"
 ICON_ALIAS_PATH = ICON_DIR / "aliases.json"
 UPDATE_STATUS_PATH = PROJECT_ROOT / "cache" / "update_status.json"
+
+# Valve's official JSON feed for the current hero list.
 HEROLIST_URL = "https://www.dota2.com/datafeed/herolist?language=english"
+
+# Try the modern icon path first, then a legacy fallback.
 ICON_URL_PATTERNS = [
     "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/{slug}.png",
     "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/{slug}_sb.png",
 ]
+
+# A browser-like user agent helps some CDNs avoid treating the request as suspicious.
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -25,6 +42,7 @@ USER_AGENT = (
 
 
 def normalize_name(text: str) -> str:
+    """Normalize human-readable hero names for comparison/merging."""
     text = text.lower().strip()
     text = text.replace("&", " and ")
     text = text.replace("'", "")
@@ -33,27 +51,33 @@ def normalize_name(text: str) -> str:
 
 
 def hero_site_slug(display_name: str) -> str:
+    """Convert a display name into a compact Valve-site slug guess."""
     return normalize_name(display_name).replace(" ", "")
 
 
 def slug_to_title(slug: str) -> str:
+    """Convert a slug such as 'outworlddestroyer' or 'queen_of_pain' into title case."""
     return re.sub(r"\s+", " ", slug.replace("_", " ").replace("-", " ")).title().strip()
 
 
 def make_request(url: str) -> urllib.request.Request:
+    """Build a URL request with the configured user agent."""
     return urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
 
 
 def fetch_json(url: str, timeout: float = 20.0) -> Any:
+    """Fetch JSON from a URL and decode it defensively."""
     with urllib.request.urlopen(make_request(url), timeout=timeout) as response:
         return json.loads(response.read().decode("utf-8", errors="replace"))
 
 
 def load_hero_data() -> List[Dict[str, object]]:
+    """Load the local hero_data.json file."""
     return json.loads(DATA_PATH.read_text(encoding="utf-8"))
 
 
 def save_hero_data(data: List[Dict[str, object]]) -> None:
+    """Write the local hero_data.json file with consistent formatting."""
     DATA_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
@@ -66,6 +90,7 @@ def save_update_status(
     expected_icon_count: int | None = None,
     message: str = "",
 ) -> None:
+    """Write a small machine-readable status file for the UI health panel."""
     UPDATE_STATUS_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "passed": passed,
@@ -79,6 +104,7 @@ def save_update_status(
 
 
 def parse_int_like(value: Any) -> int | None:
+    """Best-effort conversion for integer-like JSON fields."""
     if isinstance(value, bool):
         return None
     if isinstance(value, int):
@@ -93,6 +119,7 @@ def parse_int_like(value: Any) -> int | None:
 
 
 def looks_like_slug(value: str) -> bool:
+    """Heuristic check for whether a string could be a hero slug/internal name."""
     if not value:
         return False
     candidate = value.strip().lower()
@@ -104,6 +131,7 @@ def looks_like_slug(value: str) -> bool:
 
 
 def clean_slug(value: Any) -> str:
+    """Normalize various slug-like inputs into one plain lowercase hero key."""
     if not isinstance(value, str):
         return ""
     slug = value.strip().lower()
@@ -120,6 +148,7 @@ def clean_slug(value: Any) -> str:
 
 
 def pick_slug(candidate: Dict[str, Any]) -> str:
+    """Try several common JSON field names that might contain a hero slug."""
     slug_keys = (
         "slug",
         "short_name",
@@ -145,6 +174,7 @@ def pick_slug(candidate: Dict[str, Any]) -> str:
 
 
 def pick_display_name(candidate: Dict[str, Any], slug: str) -> str:
+    """Extract the best human-readable display name from a candidate JSON object."""
     display_keys = (
         "name_loc",
         "localized_name",
@@ -173,6 +203,7 @@ def pick_display_name(candidate: Dict[str, Any], slug: str) -> str:
 
 
 def pick_hero_id(candidate: Dict[str, Any]) -> int | None:
+    """Extract an integer hero ID if present."""
     for key in ("id", "hero_id", "heroId"):
         hero_id = parse_int_like(candidate.get(key))
         if hero_id is not None:
@@ -181,6 +212,7 @@ def pick_hero_id(candidate: Dict[str, Any]) -> int | None:
 
 
 def iter_dicts(obj: Any) -> Iterator[Dict[str, Any]]:
+    """Recursively iterate over every dictionary inside an arbitrary JSON tree."""
     if isinstance(obj, dict):
         yield obj
         for value in obj.values():
@@ -191,6 +223,11 @@ def iter_dicts(obj: Any) -> Iterator[Dict[str, Any]]:
 
 
 def extract_hero_entries(payload: Any) -> List[Dict[str, object]]:
+    """Extract best-effort hero entries from Valve's JSON payload.
+
+    The feed shape may evolve, so this scans the whole JSON structure and picks
+    dictionaries that look sufficiently like hero records.
+    """
     found: List[Dict[str, object]] = []
     seen: set[tuple[Any, str, str]] = set()
 
@@ -214,6 +251,7 @@ def extract_hero_entries(payload: Any) -> List[Dict[str, object]]:
             entry["site_slug"] = slug
         found.append(entry)
 
+    # If multiple partial entries describe the same hero, keep the richest one.
     by_best_key: Dict[str, Dict[str, object]] = {}
     for entry in found:
         dedupe_key = str(entry.get("hero_id") or entry.get("site_slug") or normalize_name(str(entry["display"])))
@@ -232,6 +270,7 @@ def extract_hero_entries(payload: Any) -> List[Dict[str, object]]:
 
 
 def build_match_indexes(hero_data: List[Dict[str, object]]) -> Tuple[Dict[str, Dict[str, object]], Dict[str, Dict[str, object]]]:
+    """Build lookup indexes used to merge official data into local data."""
     by_internal: Dict[str, Dict[str, object]] = {}
     by_name: Dict[str, Dict[str, object]] = {}
     for hero in hero_data:
@@ -251,6 +290,11 @@ def build_match_indexes(hero_data: List[Dict[str, object]]) -> Tuple[Dict[str, D
 
 
 def merge_official_heroes(local_data: List[Dict[str, object]], official: List[Dict[str, object]]) -> Tuple[List[Dict[str, object]], List[Dict[str, object]]]:
+    """Merge official heroes into the local hero_data list.
+
+    Existing entries are updated in place when matched.
+    Previously unknown heroes are appended with best-effort initial fields.
+    """
     by_internal, by_name = build_match_indexes(local_data)
     added: List[Dict[str, object]] = []
 
@@ -306,6 +350,7 @@ def merge_official_heroes(local_data: List[Dict[str, object]], official: List[Di
 
 
 def candidate_icon_keys(hero: Dict[str, object]) -> List[str]:
+    """Return possible icon keys for a hero in preferred order."""
     keys: List[str] = []
     for value in (hero.get("site_slug"), hero.get("internal"), hero_site_slug(str(hero.get("display", "")))):
         key = clean_slug(value)
@@ -315,6 +360,7 @@ def candidate_icon_keys(hero: Dict[str, object]) -> List[str]:
 
 
 def choose_primary_icon_key(hero: Dict[str, object]) -> str:
+    """Pick the single canonical icon key used for this hero on disk."""
     for value in (hero.get("site_slug"), hero.get("internal"), hero_site_slug(str(hero.get("display", "")))):
         key = clean_slug(value)
         if key:
@@ -323,6 +369,7 @@ def choose_primary_icon_key(hero: Dict[str, object]) -> str:
 
 
 def build_icon_alias_map(hero_data: List[Dict[str, object]]) -> Dict[str, str]:
+    """Map all equivalent icon keys onto one canonical key per hero."""
     alias_map: Dict[str, str] = {}
     for hero in hero_data:
         primary = choose_primary_icon_key(hero)
@@ -332,6 +379,7 @@ def build_icon_alias_map(hero_data: List[Dict[str, object]]) -> Dict[str, str]:
 
 
 def save_icon_alias_map(alias_map: Dict[str, str]) -> None:
+    """Write the icon alias map used by the GUI icon loader."""
     ICON_DIR.mkdir(parents=True, exist_ok=True)
     ICON_ALIAS_PATH.write_text(
         json.dumps(dict(sorted(alias_map.items())), indent=2, ensure_ascii=False) + "\n",
@@ -340,6 +388,7 @@ def save_icon_alias_map(alias_map: Dict[str, str]) -> None:
 
 
 def remove_stale_alias_icon_files(alias_map: Dict[str, str]) -> int:
+    """Delete duplicate icon files whose names are now aliases of a canonical file."""
     removed = 0
     for path in ICON_DIR.glob("*.png"):
         key = path.stem.lower()
@@ -354,15 +403,23 @@ def remove_stale_alias_icon_files(alias_map: Dict[str, str]) -> int:
 
 
 def count_local_icon_files() -> int:
+    """Count real PNG icon files in the cache."""
     return sum(1 for path in ICON_DIR.glob("*.png") if path.is_file())
 
 
 def download_bytes(url: str, timeout: float = 20.0) -> bytes:
+    """Download raw bytes from a URL."""
     with urllib.request.urlopen(make_request(url), timeout=timeout) as response:
         return response.read()
 
 
 def download_icon_file(icon_key: str, *, overwrite: bool = False) -> bool:
+    """Ensure one icon file exists locally.
+
+    Returns True if a fresh download happened.
+    Returns False if the file was already present and overwrite is False.
+    Raises on download failure after trying all icon URL patterns.
+    """
     ICON_DIR.mkdir(parents=True, exist_ok=True)
     path = ICON_DIR / f"{icon_key}.png"
     if path.exists() and not overwrite:
@@ -383,6 +440,7 @@ def download_icon_file(icon_key: str, *, overwrite: bool = False) -> bool:
 
 
 def fetch_official_hero_list() -> List[Dict[str, object]]:
+    """Download and parse Valve's official hero list feed."""
     payload = fetch_json(HEROLIST_URL)
     heroes = extract_hero_entries(payload)
     if not heroes:
@@ -395,9 +453,11 @@ def fetch_official_hero_list() -> List[Dict[str, object]]:
 
 
 def main() -> int:
+    """Run the full offline asset refresh process."""
     print("Refreshing hero data from Valve's official datafeed and updating offline icons...")
     suggestion = "Please run update_assets.py with admin permission."
 
+    # Step 1: update hero_data.json from the official hero list.
     try:
         local_data = load_hero_data()
         official = fetch_official_hero_list()
@@ -419,6 +479,7 @@ def main() -> int:
     else:
         print("No new heroes needed to be added.")
 
+    # Step 2: maintain canonical icon aliases and download missing icons.
     ICON_DIR.mkdir(parents=True, exist_ok=True)
     alias_map = build_icon_alias_map(merged)
     save_icon_alias_map(alias_map)
@@ -441,6 +502,7 @@ def main() -> int:
     icon_count_passed = icon_count == expected_icon_count
     passed = hero_count_passed and icon_count_passed and not failed
 
+    # Step 3: write a status summary that the GUI can display later.
     status_lines = []
     if hero_count_passed:
         status_lines.append(f"Hero count check passed: local {len(merged)}, official {len(official)}.")

@@ -21,8 +21,8 @@
 
 ## Files
 
-- `AD_console_command_generator.pyw` : start the UI
-- `update_assets.py` : refresh hero names from Valve's official Dota 2 datafeed and download icons for offline use. Run this with python as admin.
+- `AD_console_command_generator.pyw` : the main app.
+- `update_assets.py` : refresh hero names from Valve's official Dota 2 datafeed and download icons for offline use. Run this with python.
 - `hero_data.json` : display names, internal command names, aliases, and optional official site slugs
 - `ad_ui/logic.py` : matching, ranking, and command generation
 - `ad_ui/icons.py` : local icon loader (offline only)
@@ -32,7 +32,7 @@
 
 ## First-time setup
 
-Run the asset updater once (as admin) so the UI has local icons and updater status:
+Run the asset updater once so the UI has local icons and updater status:
 
 ```bash
 python update_assets.py
